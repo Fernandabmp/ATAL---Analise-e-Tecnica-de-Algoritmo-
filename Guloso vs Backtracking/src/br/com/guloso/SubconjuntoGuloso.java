@@ -1,23 +1,26 @@
 package br.com.guloso;
 
-import javax.swing.JOptionPane;
+import java.util.Scanner;
 
+
+/**
+ * @author Fernanda Mendoca
+ *
+ */
 public class SubconjuntoGuloso {
-	
+
 	// numero inserido para gerar conjuntos
 	private static int numero;
-	
+
 	// vetor que armazena os subconjuntos
 	private static int vetor[];
-	
 
 	/**
-	 * @param elemento base 
-	 * @param numero do conjunto
+	 * @param elemento base
+	 * @param numero  do conjunto         
 	 */
 	public static void subconjunto(int elemento, int numero) {
 
-		
 		if (elemento > numero) {
 			System.out.printf("{");
 
@@ -29,7 +32,7 @@ public class SubconjuntoGuloso {
 			System.out.printf("} \n");
 
 		} else {
-			
+
 			vetor[elemento] = 1;
 			subconjunto(elemento + 1, numero);
 			vetor[elemento] = 0;
@@ -39,8 +42,10 @@ public class SubconjuntoGuloso {
 
 	public static void main(String[] args) {
 
-		numero = Integer.valueOf(JOptionPane.showInputDialog("Digite o Numero?"));
-		vetor = new int[numero+ 1];
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Digite o número para gerar os Subconjuntos : ");
+		numero = sc.nextInt();
+		vetor = new int[numero + 1];
 		subconjunto(1, numero);
 	}
 }
