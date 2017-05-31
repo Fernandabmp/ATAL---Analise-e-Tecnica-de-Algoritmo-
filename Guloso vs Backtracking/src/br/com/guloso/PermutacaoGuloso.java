@@ -1,27 +1,23 @@
 package br.com.guloso;
 
-import javax.swing.JOptionPane;
-
-import br.com.backtracking.PermutacaoBacktracking;
+import java.util.Scanner;
 
 /**
- * @author leyds
+ * @author Fernanda Mendoca
  *
  */
 public class PermutacaoGuloso {
 	
-	// Vetor auxiliar que armazena as permuta�oes
+	// Vetor auxiliar que armazena as permutaçoes
 	private static int[] vetorAuxiliar;
 	private static int tamanhoVetor;
 	private static int[] entrada;
 	private static int tamanhoPermut;	
 	private static int numero;
 
-
-
 	/**
 	 * @param numero
-	 * @return vetor com numeros entre 1 e o n�mero
+	 * @return vetor com numeros entre 1 e o número
 	 */
 	private static int[] vetorNumero(int numero) {
 
@@ -92,7 +88,12 @@ public class PermutacaoGuloso {
 
 	public static void main(String[] args) {	
 		
-		numero = Integer.valueOf(JOptionPane.showInputDialog("Digite o Numero?"));
+		
+		// Digite o numero para permutação
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Digite o numero para permutação : ");
+		numero = sc.nextInt();
 		PermutacaoGuloso.permuta(vetorNumero(numero),numero );imprime();
 		
 	}
